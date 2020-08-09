@@ -166,7 +166,6 @@ while (loop == 'true'):
             loop = 'false'
         else:
             print "\033[1;93m Wrong Password"
-            os.system('xdg-open https://whatsapp.com/dl/
     else:
         print "\033[1;94m Wrong Username"
         
